@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-center">
+    <!--Cuando ponemos le ponemos corchetes a una propiedad de html, le decimos a angular que la puede usar, pudiéndole pasar cosas de nuestro código. Sino, no se podría  -->
+    <!-- Sería algo como razor, donde le podemos pasar variables nuestras -->
+  <img
+    [src]="url"
+    [alt]="alt"
+    class="card-img-top animate__animated animate__fadeIn"
+    (load)="onLoad()"
+    [ngStyle]="{display: hasLoaded ? '' : 'none'}"
+  />
+
+  <img
+    *ngIf="!hasLoaded"
+    src="assets/loader.svg"
+    height="35"
+    width="35"
+    class="mt-3"
+  />
+
+</div>
